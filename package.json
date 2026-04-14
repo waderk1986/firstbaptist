@@ -20,6 +20,7 @@
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
     "qa": "npm run format:check && npm run lint && npm run stylelint && npm run check",
+    "worker:check": "wrangler deploy --dry-run --outdir=.wrangler/dry-run",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
@@ -73,6 +74,7 @@
     "stylelint-config-standard": "^40.0.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.58.2"
+    "typescript-eslint": "^8.58.2",
+    "wrangler": "^4.82.2"
   }
 }

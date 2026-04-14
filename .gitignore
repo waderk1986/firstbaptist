@@ -9,3 +9,4 @@ npm-debug.log*
 _legacy
 .claude
 
+.wrangler
