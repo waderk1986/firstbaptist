@@ -9,3 +9,8 @@ npm-debug.log*
 _legacy
 .claude
 
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
