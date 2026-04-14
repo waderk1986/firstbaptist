@@ -1,0 +1,120 @@
+---
+import Button from './Button.tsx';
+
+const links = [
+  { label: 'Services', href: '#gather' },
+  { label: 'Ministries', href: '#ministries' },
+  { label: 'People', href: '#people' },
+  { label: 'Sermons', href: '#' },
+  { label: 'Newsletter', href: '#' },
+  { label: 'Calendar', href: '#' },
+  { label: 'Give', href: '#' },
+  { label: 'Facebook', href: '#' },
+  { label: 'YouTube', href: '#' },
+  { label: 'Email', href: 'mailto:deltafbc@yahoo.com' },
+];
+---
+
+<footer
+  class="relative overflow-hidden"
+  style="background: var(--color-slate-d); color: rgba(247,241,227,0.55);"
+>
+  <div
+    aria-hidden="true"
+    class="grain pointer-events-none absolute -inset-[50%] opacity-[0.06] mix-blend-soft-light"
+  >
+  </div>
+
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(197,74,44,0.12) 0%, transparent 60%);"
+  >
+  </div>
+
+  <div
+    class="side relative z-[1] mx-auto max-w-[900px] text-center"
+    style="padding-top: clamp(4rem, 9vw, 8rem); padding-bottom: clamp(2rem, 4vw, 3rem);"
+  >
+    <div class="mb-6">
+      <svg
+        viewBox="0 0 500 250"
+        class="mx-auto block"
+        style="width: clamp(280px, 55vw, 480px); height: auto;"
+      >
+        <defs>
+          <path id="archPath" d="M 30,230 Q 250,10 470,230" fill="none"></path>
+        </defs>
+        <text
+          style="font-family: var(--font-italic); font-style: italic; font-size: 52px; fill: rgba(247,241,227,0.9); letter-spacing: 0.02em;"
+        >
+          <textPath href="#archPath" startOffset="50%" text-anchor="middle">
+            Come As You Are
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <p
+      class="font-italic mb-10 italic"
+      style="font-size: 0.98rem; color: rgba(247,241,227,0.42);"
+    >
+      we'd love to meet you.
+    </p>
+
+    <div class="mb-10">
+      <p
+        class="mx-auto max-w-[460px] text-[0.86rem] leading-relaxed"
+        style="color: rgba(247,241,227,0.5);"
+      >
+        1250 Pioneer Rd · Delta, CO 81416<br />
+        <a href="tel:9708743847" class="hover:text-rust-l transition-colors"
+          >(970) 874-3847</a
+        >
+      </p>
+    </div>
+
+    <div class="mb-14 flex flex-wrap items-center justify-center gap-3">
+      <Button href="#" variant="solid" client:load>Plan Your Visit</Button>
+      <Button href="mailto:deltafbc@yahoo.com" variant="ghost" client:load
+        >Email Us</Button
+      >
+    </div>
+
+    <div
+      class="mb-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 border-b pb-10"
+      style="border-color: rgba(247,241,227,0.08);"
+    >
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="hover:text-rust-l py-1 text-[0.82rem] font-medium transition-colors"
+            style="color: rgba(247,241,227,0.45);"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-between gap-2 text-[0.68rem] md:flex-row"
+      style="color: rgba(247,241,227,0.3);"
+    >
+      <span>© 2026 First Baptist Church of Delta</span>
+      <span>
+        Built by <a
+          href="https://wadeweb.dev"
+          target="_blank"
+          rel="noopener"
+          class="text-rust-l hover:text-rust font-semibold transition-colors"
+          >Wade Web Works</a
+        >
+      </span>
+      <a href="#top" class="hover:text-rust-l font-semibold transition-colors"
+        >Back to top ↑</a
+      >
+    </div>
+  </div>
+</footer>

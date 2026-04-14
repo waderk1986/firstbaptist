@@ -1,0 +1,85 @@
+---
+import Reveal from './Reveal.tsx';
+
+const others = [
+  {
+    time: '9:00 AM',
+    title: 'Meet & Greet',
+    desc: 'Coffee and conversation before the service.',
+  },
+  {
+    time: '11:15 AM',
+    title: 'Sunday School',
+    desc: 'Bible study groups for every age.',
+  },
+  {
+    time: '12:00 PM',
+    title: 'Karen Baptist Fellowship',
+    desc: 'Worship in the Karen language for our Burmese families.',
+  },
+];
+---
+
+<section
+  class="bg-bg side relative z-10"
+  style="padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: clamp(4rem, 8vw, 7rem);"
+>
+  <div class="measure mx-auto">
+    <Reveal client:visible>
+      <h2
+        class="font-display text-ink mb-10"
+        style="font-size: clamp(1.8rem, 4vw, 2.8rem);"
+      >
+        Sundays
+      </h2>
+    </Reveal>
+
+    <Reveal client:visible delay={0.08}>
+      <div
+        class="border-ink/8 mb-12 flex flex-col gap-6 border-b pb-12 sm:flex-row sm:gap-10"
+      >
+        <div class="shrink-0">
+          <div
+            class="font-display text-rust leading-[0.9] tracking-tight"
+            style="font-size: clamp(3rem, 7vw, 5rem);"
+          >
+            9:45
+          </div>
+          <div
+            class="text-ink-soft mt-2 text-[0.68rem] font-semibold tracking-[0.15em] uppercase"
+          >
+            AM · Worship
+          </div>
+        </div>
+        <p
+          class="font-italic text-ink-mid pt-1"
+          style="font-size: 1rem; line-height: 1.8;"
+        >
+          This is when we all come together. Singing, prayer, a message from
+          Scripture, and the kind of community that feels like family. If you
+          visit once, this is the one.
+        </p>
+      </div>
+    </Reveal>
+
+    <div class="flex flex-col gap-6">
+      {
+        others.map((o, i) => (
+          <Reveal client:visible delay={0.12 + i * 0.06}>
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-5">
+              <div class="font-display text-rust-d min-w-[90px] shrink-0 text-[1.15rem]">
+                {o.time}
+              </div>
+              <div>
+                <h4 class="font-display text-ink text-[1.05rem]">{o.title}</h4>
+                <p class="text-ink-soft mt-1 text-[0.88rem] leading-relaxed">
+                  {o.desc}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        ))
+      }
+    </div>
+  </div>
+</section>

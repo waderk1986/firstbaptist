@@ -1,0 +1,9 @@
+dist
+.astro
+node_modules
+_legacy
+public
+package-lock.json
+hero.mp4
+*.mp4
+*.mov

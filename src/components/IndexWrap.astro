@@ -1,0 +1,40 @@
+---
+import IndexSection from './IndexSection.tsx';
+---
+
+<section
+  id="ministries"
+  class="side relative z-10 overflow-hidden"
+  style="background: #0e0c08; padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem);"
+>
+  <!-- looping background video, blurred -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      class="h-full w-full object-cover"
+      style="filter: blur(4px) brightness(0.32) saturate(0.7); transform: scale(1.04);"
+    >
+      <source src="/hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div
+    aria-hidden="true"
+    class="grain pointer-events-none absolute -inset-[50%] z-[1] opacity-[0.07] mix-blend-soft-light"
+  >
+  </div>
+
+  <!-- warm rust ambient light -->
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 z-[1]"
+    style="background: radial-gradient(ellipse 60% 50% at 20% 20%, rgba(197,74,44,0.14) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,143,107,0.10) 0%, transparent 60%);"
+  >
+  </div>
+
+  <IndexSection client:visible />
+</section>

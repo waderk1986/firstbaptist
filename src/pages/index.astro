@@ -1,0 +1,24 @@
+---
+import Base from '@/layouts/Base.astro';
+import Nav from '@/components/Nav.tsx';
+import Hero from '@/components/Hero.tsx';
+import Welcome from '@/components/Welcome.astro';
+import Sundays from '@/components/Sundays.astro';
+import Scripture from '@/components/Scripture.astro';
+import IndexWrap from '@/components/IndexWrap.astro';
+import People from '@/components/People.tsx';
+import ContactForm from '@/components/ContactForm.tsx';
+import Footer from '@/components/Footer.astro';
+---
+
+<Base>
+  <Nav client:load />
+  <Hero client:load />
+  <Welcome />
+  <Sundays />
+  <Scripture />
+  <IndexWrap />
+  <People client:visible />
+  <ContactForm client:visible />
+  <Footer />
+</Base>

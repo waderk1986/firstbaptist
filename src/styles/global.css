@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #ede4d3;
+  --color-bone: #f7f1e3;
+  --color-ink: #121418;
+  --color-ink-mid: #3f434a;
+  --color-ink-soft: #6c6f76;
+  --color-rust: #c54a2c;
+  --color-rust-d: #8f3620;
+  --color-rust-l: #e06a48;
+  --color-sage: #7c8f6b;
+  --color-sage-d: #5a6b4c;
+  --color-slate: #2a2e35;
+  --color-slate-d: #1a1d22;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-italic: 'Libre Baskerville', Georgia, serif;
+}
+
+@layer base {
+  :root {
+    --side: clamp(1.5rem, 5vw, 4rem);
+    --measure: 720px;
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: var(--color-rust);
+    color: var(--color-bone);
+  }
+}
+
+@layer utilities {
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  .side {
+    padding-left: var(--side);
+    padding-right: var(--side);
+  }
+
+  .measure {
+    max-width: var(--measure);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,51 @@
+---
+import Reveal from './Reveal.tsx';
+---
+
+<section
+  class="side relative z-10 overflow-hidden"
+  style="background: var(--color-slate-d); padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem);"
+>
+  <!-- Faint mountain SVG silhouette behind the quote -->
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 1200 420"
+    class="absolute inset-x-0 bottom-0 z-0 h-[80%] w-full"
+    preserveAspectRatio="xMidYMax slice"
+    style="opacity: 0.08;"
+  >
+    <path
+      d="M0 380 L160 220 L240 290 L340 140 L460 260 L560 180 L700 300 L820 120 L960 240 L1080 170 L1200 260 L1200 420 L0 420 Z"
+      fill="var(--color-rust)"
+      style="opacity: 0.7;"></path>
+    <path
+      d="M0 420 L180 300 L300 360 L440 240 L560 340 L700 260 L840 360 L980 270 L1120 340 L1200 300 L1200 420 Z"
+      fill="var(--color-sage)"></path>
+  </svg>
+
+  <div
+    aria-hidden="true"
+    class="grain absolute inset-0 z-[1] opacity-[0.08] mix-blend-soft-light"
+  >
+  </div>
+
+  <div class="relative z-[2] mx-auto max-w-[680px] text-center">
+    <Reveal client:visible>
+      <blockquote
+        class="font-italic mb-5 leading-[1.45] italic"
+        style="font-size: clamp(1.3rem, 3.5vw, 2.4rem); color: rgba(247, 241, 227, 0.92);"
+      >
+        "So in Christ we, though many, form one body, and each member belongs to
+        all the others."
+      </blockquote>
+    </Reveal>
+    <Reveal client:visible delay={0.1}>
+      <cite
+        class="block font-sans text-[0.72rem] font-semibold tracking-[0.2em] uppercase not-italic"
+        style="color: var(--color-rust-l);"
+      >
+        — Romans 12:5
+      </cite>
+    </Reveal>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import Reveal from './Reveal.tsx';
+---
+
+<section
+  id="gather"
+  class="bg-bg relative z-10 rounded-t-[28px] shadow-[0_-30px_60px_rgba(18,20,24,0.12)]"
+>
+  <div
+    class="side"
+    style="padding-top: clamp(5rem, 12vw, 10rem); padding-bottom: clamp(3rem, 6vw, 5rem);"
+  >
+    <div class="measure mx-auto">
+      <Reveal client:visible>
+        <p
+          class="text-rust mb-8 text-[0.7rem] font-semibold tracking-[0.2em] uppercase"
+        >
+          Est. 1900s · Delta, Colorado
+        </p>
+      </Reveal>
+
+      <Reveal client:visible delay={0.08}>
+        <h2
+          class="font-display text-ink mb-10 leading-[1.08]"
+          style="font-size: clamp(2.2rem, 5vw, 3.8rem);"
+        >
+          We're a small church<br />
+          on the Western Slope<br />
+          with a <em class="font-italic text-sage-d italic">big</em> welcome.
+        </h2>
+      </Reveal>
+
+      <div
+        class="font-italic text-ink-mid space-y-5"
+        style="font-size: 1.05rem; line-height: 1.85;"
+      >
+        <Reveal client:visible delay={0.12}>
+          <p>
+            First Baptist Church of Delta has been a cornerstone of faith in
+            this valley for generations. We gather each Sunday to worship, to
+            study God's Word, and to love our neighbors well.
+          </p>
+        </Reveal>
+        <Reveal client:visible delay={0.16}>
+          <p>
+            You don't need to have it all figured out. You don't need to dress
+            up. You just need to come.
+          </p>
+        </Reveal>
+      </div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="measure mx-auto">
+      <span
+        class="block h-px opacity-35"
+        style="background: linear-gradient(90deg, transparent, var(--color-rust), transparent);"
+      ></span>
+    </div>
+  </div>
+</section>
