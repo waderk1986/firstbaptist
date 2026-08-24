@@ -6,7 +6,6 @@ import Welcome from '@/components/Welcome.astro';
 import Sundays from '@/components/Sundays.astro';
 import Scripture from '@/components/Scripture.astro';
 import IndexWrap from '@/components/IndexWrap.astro';
-import People from '@/components/People.tsx';
 import ContactForm from '@/components/ContactForm.tsx';
 import Footer from '@/components/Footer.astro';
 ---
@@ -18,7 +17,6 @@ import Footer from '@/components/Footer.astro';
   <Sundays />
   <Scripture />
   <IndexWrap />
-  <People client:visible />
   <ContactForm client:visible />
   <Footer />
 </Base>

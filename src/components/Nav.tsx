@@ -6,7 +6,6 @@ import { cn } from '@/lib/cn';
 const LINKS = [
   { label: 'Gather', href: '#gather' },
   { label: 'Ministries', href: '#ministries' },
-  { label: 'People', href: '#people' },
   { label: 'Connect', href: '#connect' },
 ];
 
